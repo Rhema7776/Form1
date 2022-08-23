@@ -1,0 +1,26 @@
+{% extends 'base.html'   %}
+
+
+{% block content %}
+
+
+
+<center>
+
+    {% if submitted %}
+            <h1>You have successfully resgistered</h1>
+    {% else %}
+            <h2>Register here</h2>
+
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <input type="submit" name="Register" class="btn btn-secondary">
+            </form>
+    {% endif %}
+</center>
+
+
+{% endblock content %}
